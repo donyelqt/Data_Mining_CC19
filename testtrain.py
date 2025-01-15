@@ -1,6 +1,6 @@
 import pandas as pd  # Import pandas for data handling
 
-df = pd.read_csv('train.csv')  # Load the Titanic dataset
+df = pd.read_csv('assets/train.csv')  # Load the Titanic dataset
 
 print(df)  # Display the whole dataset
 

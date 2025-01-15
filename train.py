@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load the Titanic dataset
-df = pd.read_csv("train.csv")
+df = pd.read_csv('assets/train.csv')
 
 print(df.head(5))
 df.describe()
