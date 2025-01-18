@@ -40,3 +40,5 @@ print(df.isnull().sum())
 print('\nCleaned Dataset Summary:')
 print(df.describe())
 
+df.to_csv('assets/new_cleaned_titanic.csv', index=False)
+print("\nCleaned dataset saved as 'cleaned_titanic.csv'")
