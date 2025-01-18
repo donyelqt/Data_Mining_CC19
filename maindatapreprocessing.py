@@ -20,3 +20,7 @@ df.drop_duplicates(inplace=True)
 print(f'\nNumber of duplicate rows remaining: {df.duplicated().sum()}')
 
 df['Age'] = df['Age'].apply(lambda x: 80 if x > 80 else x)
+
+z_scores = stats.zscore(df[['Age', 'Fare',]].dropna())
+df = df[(abs(z_scores) < 3).all(axis=1)]
+
