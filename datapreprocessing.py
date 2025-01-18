@@ -13,3 +13,5 @@ print('\Missing Values Count:')
 print(df.isnull().sum())
 
 df['Age'] = df['Age'].fillna(df['Age'].mean())
+df['Embarked'] = df['Embarked'].fillna(df['Embarked'].mode()[0])
+
