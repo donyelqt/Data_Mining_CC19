@@ -37,4 +37,6 @@ print('Embarked', df['Embarked'].unique())
 print('\nMissing values count after cleaning:')
 print(df.isnull().sum())
 
-print()
+print('\nCleaned Dataset Summary:')
+print(df.describe())
+
