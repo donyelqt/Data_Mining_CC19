@@ -1,5 +1,7 @@
 import pandas as pd
 from scipy import stats
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 df = pd.read_csv('assets/train.csv')
 
@@ -42,3 +44,15 @@ print(df.describe())
 
 df.to_csv('assets/new_cleaned_titanic.csv', index=False)
 print("\nCleaned dataset saved as 'cleaned_titanic.csv'")
+
+# visualize outliers with boxplots
+plt.figure(figsize=(10, 5))
+plt.subplot(1, 2, 1)
+sns.boxplot(y=df['Age'], color='skyblue')
+plt.title('Boxplot of Age')
+
+plt.subplot(1, 2, 2)
+sns.boxplot(y=df['Fare'], color='lightgreen')
+plt.title('Boxplot of Fare')
+plt.tight_layout()
+plt.show()
