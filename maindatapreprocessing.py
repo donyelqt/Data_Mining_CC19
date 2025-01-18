@@ -15,3 +15,6 @@ print(df.isnull().sum())
 
 df['Age'] = df['Age'].fillna(df['Age'].mean())
 df['Embarked'] = df['Embarked'].fillna(df['Embarked'].mode()[0])
+
+df.drop_duplicates(inplace=True)
+print(f'\nNumber of duplicate rows remaining: {df.duplicated().sum()}')
