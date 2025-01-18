@@ -10,3 +10,5 @@ print('\nDataset Summary:')
 print(df.describe())
 print(df.info())
 
+print('\nMissing Values Count:')
+print(df.isnull().sum())
