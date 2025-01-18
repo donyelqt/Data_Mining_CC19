@@ -33,3 +33,8 @@ df['Embarked'] = df['Embarked'].str.upper()
 print('\nUnique values in catagorical columns:')
 print('Sex', df['Sex'].unique())
 print('Embarked', df['Embarked'].unique())
+
+print('\nMissing values count after cleaning:')
+print(df.isnull().sum())
+
+print()
