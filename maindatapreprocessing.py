@@ -18,3 +18,5 @@ df['Embarked'] = df['Embarked'].fillna(df['Embarked'].mode()[0])
 
 df.drop_duplicates(inplace=True)
 print(f'\nNumber of duplicate rows remaining: {df.duplicated().sum()}')
+
+df['Age'] = df['Age'].apply(lambda x: 80 if x > 80 else x)
