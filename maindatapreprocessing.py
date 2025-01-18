@@ -28,3 +28,8 @@ print('\nAfter outlier removal:')
 print(df[['Age', 'Fare']].describe())
 
 df['Sex'] = df['Sex'].str.capitalize()
+df['Embarked'] = df['Embarked'].str.upper()
+
+print('\nUnique values in catagorical columns:')
+print('Sex', df['Sex'].unique())
+print('Embarked', df['Embarked'].unique())
