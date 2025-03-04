@@ -26,6 +26,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 # Normalize the features (Scaling helps in Ridge/Lasso regression)
 scaler = StandardScaler()
+
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
@@ -73,5 +74,3 @@ plt.xlabel("Feature")
 plt.ylabel("Coefficient Value")
 plt.xticks(rotation=45)
 plt.show()
-
- 
