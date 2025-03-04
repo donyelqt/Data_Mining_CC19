@@ -8,10 +8,10 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 # Sample dataset
 data = {
-    'SquareFootage': [800, 1200, 1500, 1800, 2200, 2500, 2800, 3200, 3500, 4000],
-    'Bedrooms': [2, 3, 3, 4, 4, 5, 5, 6, 6, 7],
-    'Age': [10, 5, 15, 20, 8, 12, 7, 3, 25, 30],  # Age of the house
-    'DistanceToCity': [10, 8, 12, 5, 7, 4, 6, 3, 2, 1],  # Miles from city center
+    'SquareFootage': [800, 1200, 1500, 1800, 2200, 2500, 2800, 3200, 3500, 4000, 1000, 2000, 3000, 4000, 5000],
+    'Bedrooms': [2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 3, 3, 4, 4, 5],  
+    'Age': [10, 5, 15, 20, 8, 12, 7, 3, 25, 30, 5, 5, 5, 5, 5],  # Age of the house
+    'DistanceToCity': [10, 8, 12, 5, 7, 4, 6, 3, 2, 1, 1, 2, 3, 4, 5],  # Miles from city center
     'Price': [150000, 180000, 220000, 250000, 280000, 310000, 350000, 390000, 420000, 460000]
 }
 

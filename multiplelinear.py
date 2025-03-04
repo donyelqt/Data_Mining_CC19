@@ -55,7 +55,48 @@ ax.set_zlabel('Price ($)')
 ax.set_title('House Price Prediction: Square Footage vs Bedrooms vs Price')
 ax.legend()
 
-# Adjust view angle for better visualization
+# Adjust view angle for better visualization 
 ax.view_init(elev=20, azim=-45)
 
+plt.show()
+
+# Create figure with two subplots 2D
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+
+# Plot 1: Square Footage vs Price
+ax1.scatter(X_train['SquareFootage'], y_train, c='blue', label='Training Data')
+ax1.scatter(X_test['SquareFootage'], y_test, c='green', label='Test Data')
+ax1.scatter(X_test['SquareFootage'], y_pred, c='red', label='Predictions')
+
+# Create regression line for Square Footage
+x_line = np.linspace(min(df['SquareFootage']), max(df['SquareFootage']), 100)
+# For this line, use average number of bedrooms
+avg_bedrooms = df['Bedrooms'].mean()
+y_line = model.intercept_ + model.coef_[0] * x_line + model.coef_[1] * avg_bedrooms
+ax1.plot(x_line, y_line, c='gray', alpha=0.5)
+
+ax1.set_xlabel('Square Footage')
+ax1.set_ylabel('Price ($)')
+ax1.set_title('Square Footage vs Price')
+ax1.legend()
+
+# Plot 2: Bedrooms vs Price
+ax2.scatter(X_train['Bedrooms'], y_train, c='blue', label='Training Data')
+ax2.scatter(X_test['Bedrooms'], y_test, c='green', label='Test Data')
+ax2.scatter(X_test['Bedrooms'], y_pred, c='red', label='Predictions')
+
+# Create regression line for Bedrooms
+x_line = np.linspace(min(df['Bedrooms']), max(df['Bedrooms']), 100)
+# For this line, use average square footage
+avg_sqft = df['SquareFootage'].mean()
+y_line = model.intercept_ + model.coef_[0] * avg_sqft + model.coef_[1] * x_line
+ax2.plot(x_line, y_line, c='gray', alpha=0.5)
+
+ax2.set_xlabel('Bedrooms')
+ax2.set_ylabel('Price ($)')
+ax2.set_title('Bedrooms vs Price')
+ax2.legend()
+
+# Adjust layout and display
+plt.tight_layout()
 plt.show()
